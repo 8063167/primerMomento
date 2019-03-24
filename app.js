@@ -8,8 +8,14 @@ let app = express();
 let projectRoutes = require('./Routes/ProjectRoutes');
 
 app.use(express.urlencoded({extended:false}));
-//app.use(bodyParser.json());
+app.set('port', process.env.PORT || 3001);
 
+app.get('./api/test',(req,res)=>{
+    res.status(200).send({
+        mensaje:"Hola mundo con api de node",
+        bienvenida:"Felicidades"
+    });
+});
 //rutas
 app.use('/api',projectRoutes);
 module.exports = app;

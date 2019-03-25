@@ -5,7 +5,7 @@ let app = require("./app");
 let port = 3700;
 //promesa para conexión con mongodb
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/cosita", { useNewUrlParser: true })
+mongoose.connect("mongodb://localhost:27017/computadores", { useNewUrlParser: true })
     .then(() => {
         console.log("Conexión realizada exitosamente");
         app.listen(port, () => {
